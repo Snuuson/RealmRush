@@ -7,7 +7,6 @@ public class Tower : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] int cost = 75;
-    [SerializeField] float refundPercent = 0.5f;
     
     void Start()
     {

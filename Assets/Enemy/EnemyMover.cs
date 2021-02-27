@@ -8,9 +8,12 @@ public class EnemyMover : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] List<Waypoint> path = new List<Waypoint>();
+    [SerializeField] [Range(0f, 100f)] float maxSpeed = 1f;
     [SerializeField] [Range(0f, 100f)] float speed = 1f;
     Enemy enemy;
 
+    public float Speed{get{return speed;} set{speed = value;}}
+    public float MaxSpeed{get{return maxSpeed;} set{maxSpeed = value;}}
     void Awake() 
     {
         enemy = GetComponent<Enemy>();
@@ -18,7 +21,7 @@ public class EnemyMover : MonoBehaviour
     }
     void OnEnable()
     {
-        
+        speed = maxSpeed;
         FindPath();
         ReturnToStart();
         StartCoroutine(FollowPath());

@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Path
+  - Fire
+  - Frost
+  - Chaos
   layers:
   - Default
   - TransparentFX

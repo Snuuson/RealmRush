@@ -31,6 +31,15 @@ public class Waypoint : MonoBehaviour
             towerIterator = 1;
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            towerIterator = 2;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            towerIterator = 3;
+        }
+
 
     }
     public bool IsPlaceable { get { return isPlaceable; } }

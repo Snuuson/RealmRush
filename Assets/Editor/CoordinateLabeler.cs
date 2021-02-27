@@ -20,6 +20,7 @@ public class CoordinateLabeler : MonoBehaviour
         label = GetComponent<TextMeshPro>();
         DisplayCoordinates();
         label.enabled = false;
+        
     }
     void Start()
     {

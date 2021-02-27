@@ -131,6 +131,8 @@ MonoBehaviour:
   towerList:
   - {fileID: -2579932002078302873, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
   - {fileID: 8508155620150654200, guid: 5792f37114a00f84bab14a54e0568a24, type: 3}
+  - {fileID: 6471264771573343755, guid: 3ae48212eeed01048bdfc46c804ab12c, type: 3}
+  - {fileID: 6858410421785650058, guid: f00fd9f1f65788d41b6e4e082c13aebe, type: 3}
   isPlaceable: 1
 --- !u!65 &5629340710658337674
 BoxCollider:
