@@ -28,10 +28,12 @@ public class EnemyHealth : MonoBehaviour
         
         enemy = GetComponent<Enemy>();
         hitAudioSource = GetComponent<AudioSource>();
-        Transform child = transform.Find("HitPointLabel");
+        Transform label = transform.Find("HitPointLabel");
+        hitPointLabel = label.gameObject.GetComponent<TextMeshPro>();
         
-        hitPointLabel = child.gameObject.GetComponent<TextMeshPro>();
-
+        Transform particleSystem = transform.Find("HitParticleSystem");
+        hitParticleSystem = particleSystem.GetComponent<ParticleSystem>();
+        
         numberOfKills = 0;
         GameObject canvas = FindObjectOfType<MainCanvas>().transform.gameObject;
         numberOfKillsLabel = canvas.transform.Find("NumberOfKills").GetComponent<TextMeshProUGUI>();
@@ -117,7 +119,6 @@ public class EnemyHealth : MonoBehaviour
             numberOfKills++;
             UpdateKillCountLabel();
             maxHitpoints += difficultyRamp;
-            transform.GetComponent<EnemyMover>().MaxSpeed += 0.05f;
             enemy.RewardGold();
         }
     }
