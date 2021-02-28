@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3022666981779711264}
-  - component: {fileID: 6947001611868521750}
-  - component: {fileID: 6858410421785650058}
   m_Layer: 0
   m_Name: BlackTower
   m_TagString: Untagged
@@ -30,57 +28,26 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 7962856995290297533}
+  - {fileID: 3049137847254123177}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6947001611868521750
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7100815036268869017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b4a6e3b03c0974f8d7b497cfd7d70c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weapon: {fileID: 3049137847254123177}
-  attackSpeed: 2
-  attackRange: 50
---- !u!114 &6858410421785650058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7100815036268869017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c16ae2aaf61b06346928680472058ce8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cost: 500
-  refundPercent: 0.25
-  buildDelay: 10
-  damage: 1
-  damageType: 3
 --- !u!1001 &4128226056354019499
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 7962856995290297533}
+    m_TransformParent: {fileID: 3022666981779711264}
     m_Modifications:
     - target: {fileID: 1376642495411534338, guid: e0b03c327e1472144a3f4997e1c9c682,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1376642495411534338, guid: e0b03c327e1472144a3f4997e1c9c682,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.392
+      value: 0.39200002
       objectReference: {fileID: 0}
     - target: {fileID: 1376642495411534338, guid: e0b03c327e1472144a3f4997e1c9c682,
         type: 3}
@@ -100,17 +67,17 @@ PrefabInstance:
     - target: {fileID: 1376642495411534338, guid: e0b03c327e1472144a3f4997e1c9c682,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1376642495411534338, guid: e0b03c327e1472144a3f4997e1c9c682,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1376642495411534338, guid: e0b03c327e1472144a3f4997e1c9c682,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1376642495411534338, guid: e0b03c327e1472144a3f4997e1c9c682,
         type: 3}

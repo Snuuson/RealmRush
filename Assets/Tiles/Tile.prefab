@@ -205,12 +205,12 @@ MonoBehaviour:
     type: 3}
   towerIterator: 0
   towerTypeList:
-  - {fileID: -2579932002078302873, guid: 8a965e088bae16643aab3d07ccfd5e2e, type: 3}
-  - {fileID: 4531527717101785540, guid: c778b6cd060adb048921154d8734cfa9, type: 3}
-  - {fileID: 1504215387466776841, guid: 95a95b0a541791b4086b09c4a1eaab62, type: 3}
-  - {fileID: 6858410421785650058, guid: f00fd9f1f65788d41b6e4e082c13aebe, type: 3}
-  - {fileID: 8623189487773328575, guid: 94a83232c33941b41b619ba77a9e2ff4, type: 3}
-  - {fileID: 8107611759011514930, guid: 00d0295491ee60b41bd094768aaacb66, type: 3}
+  - {fileID: 8783942519090870154, guid: f531c187ac9209b4aac536c23cb04bb6, type: 3}
+  - {fileID: 1618869192597964085, guid: dd42ad8c007a00e4587ceb0bb0d01e5b, type: 3}
+  - {fileID: 8198874693265651819, guid: 07f05fc2641df584d9dcc84d2c078895, type: 3}
+  - {fileID: 1971967107676481650, guid: 87b82cee8a851a044bd61954e243d092, type: 3}
+  - {fileID: 1773725933864165765, guid: 613dc77860c2b6b4a956b118972906bb, type: 3}
+  - {fileID: 6719350104275899818, guid: a413fc444127d954d805bb2489d6b845, type: 3}
   isPlaceable: 1
 --- !u!1 &7808624976626604659
 GameObject:
