@@ -119,7 +119,6 @@ public class EnemyHealth : MonoBehaviour
             numberOfKills++;
             UpdateKillCountLabel();
             maxHitpoints += difficultyRamp;
-            transform.GetComponent<EnemyMover>().MaxSpeed += 0.05f;
             enemy.RewardGold();
         }
     }

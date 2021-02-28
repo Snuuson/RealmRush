@@ -6,53 +6,60 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] GameObject enemyPrefab;
-    [SerializeField] [Range(0.2f,30f)] float spawnTimer = 1;
-    [SerializeField] [Range(0, 50)] int poolSize = 5;
-
-    GameObject[] pool;
-
+    
+    
+    [SerializeField] Wave[] waves = new Wave[10];
+    [SerializeField] int waveSpawnInterval = 20;
+    
+    
     void Awake() {
-        PopulatePool();
+        InitializeWaves();
+        
     }
 
     void Start()
     {
-        new WaitForSeconds(2f);
-        StartCoroutine(SpawnEnemy());
+        StartCoroutine(SpawnAllWaves());
     }
 
-    private void PopulatePool()
+    void InitializeWaves()
     {
-        pool = new GameObject[poolSize];
-        for (int i = 0; i < poolSize; i++) 
-        { 
-            GameObject obj = Instantiate(enemyPrefab, gameObject.transform);
-            obj.SetActive(false);
-            pool[i] = obj;
-            
-        }
-    }
-
-    void EnableObjectInPool() 
-    {
-        foreach (GameObject enemy in pool) {
-            
-            if (!enemy.activeInHierarchy) {
-                enemy.SetActive(true);
-                return;
-            }
-        }
-    }
-
-    IEnumerator SpawnEnemy() 
-    {
-        while(true)
+        foreach(Wave wave in waves)
         {
-            EnableObjectInPool();
-            yield return new WaitForSeconds(spawnTimer);
+            for(int i = 0; i < wave.WaveSize;i++)
+            {
+                GameObject obj = Instantiate(wave.ObjectPrefab, gameObject.transform);
+                obj.SetActive(false);
+                wave.objectList.Add(obj);
+            }
+            
         }
+    }
+
+    IEnumerator SpawnAllWaves()
+    {
+        foreach(Wave wave in waves){
+            SpawnWave(wave);
+            yield return new WaitForSeconds(waveSpawnInterval);
+        }
+    }
+    
+
+    void SpawnWave(Wave wave)
+    {
         
+        Debug.Log("Spawing Wave");
+        StartCoroutine(SpawnEnemies(wave));
         
+    }
+
+    IEnumerator SpawnEnemies(Wave wave) 
+    {
+            foreach(GameObject obj in wave.objectList)
+            {
+                obj.SetActive(true);
+                yield return new WaitForSeconds(wave.SpawnInterval);
+
+            }
     }
 }
