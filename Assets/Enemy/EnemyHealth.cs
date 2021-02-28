@@ -15,6 +15,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] TextMeshPro hitPointLabel;
     [SerializeField] TextMeshProUGUI numberOfKillsLabel;
 
+    [SerializeField] EnemyMover enemyMover;
+    
     static int numberOfKills = 0;
     AudioSource hitAudioSource;
 
@@ -33,12 +35,12 @@ public class EnemyHealth : MonoBehaviour
         numberOfKills = 0;
         GameObject canvas = FindObjectOfType<MainCanvas>().transform.gameObject;
         numberOfKillsLabel = canvas.transform.Find("NumberOfKills").GetComponent<TextMeshProUGUI>();
-        Debug.Log(numberOfKillsLabel);
+        enemyMover = GetComponent<EnemyMover>();
         
         UpdateKillCountLabel();
        
         
-        Debug.Log(hitPointLabel);
+       
 
 
     }
@@ -58,9 +60,8 @@ public class EnemyHealth : MonoBehaviour
 
     void OnParticleCollision(GameObject other)
     {
-        Debug.Log(other.tag);
-        String dmgTag = other.tag;
-        ProcessHit(dmgTag);
+        Tower tower = other.transform.GetComponentInParent<Tower>();
+        ProcessHit(tower);
     }
 
     void PlayHitAudio() 
@@ -76,25 +77,41 @@ public class EnemyHealth : MonoBehaviour
         
         numberOfKillsLabel.text = "Kills: " + numberOfKills;
     }
-    private void ProcessHit(String dmgTag)
+
+    private void ApplyModifier(Tower tower)
     {
-        if(dmgTag == "Frost")
+        switch(tower.DamageType)
         {
-            transform.GetComponent<EnemyMover>().Speed *= 0.9f;
+            case DamageType.frost:
+                enemyMover.Speed = enemyMover.MaxSpeed * 0.7f;
+                break;
+            case DamageType.chaos:
+                int roll = UnityEngine.Random.Range(0,10);
+                if(roll == 0){
+                    currentHitpoints-= 50;
+                } 
+                enemyMover.Speed = enemyMover.MaxSpeed * 0.7f;
+                break;
         }
-        if(dmgTag == "Fire")
-        {
-            currentHitpoints--;
-        }
-        if(dmgTag == "Chaos")
-        {
-            Debug.Log("Chaos Damage");
-            currentHitpoints -= 9;
-        }
-        currentHitpoints--;
+    }
+
+    private void ApplyDamageTower(Tower tower)
+    {
+        currentHitpoints-= tower.Damage;
+    }
+    private void ProcessHit(Tower tower)
+    {
+        
+        ApplyModifier(tower);
+
+        ApplyDamageTower(tower);
+        
         UpdateHitpointLabel();
+
         hitParticleSystem.Play();
+
         PlayHitAudio();
+
         if (currentHitpoints <= 0) {
             gameObject.SetActive(false);
             numberOfKills++;

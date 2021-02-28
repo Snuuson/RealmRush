@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 3144582324300694500}
-  attackSpeed: 100
+  attackSpeed: 0.9
   attackRange: 30
 --- !u!114 &-2579932002078302873
 MonoBehaviour:
@@ -63,6 +63,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 50
+  refundPercent: 0.25
+  buildDelay: 1
+  damage: 1
+  damageType: 0
 --- !u!82 &-2542325140412271028
 AudioSource:
   m_ObjectHideFlags: 0

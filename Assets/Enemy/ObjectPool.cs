@@ -27,15 +27,17 @@ public class ObjectPool : MonoBehaviour
         pool = new GameObject[poolSize];
         for (int i = 0; i < poolSize; i++) 
         { 
-            pool[i] = Instantiate(enemyPrefab, gameObject.transform);
-            pool[i].SetActive(false);
+            GameObject obj = Instantiate(enemyPrefab, gameObject.transform);
+            obj.SetActive(false);
+            pool[i] = obj;
+            
         }
     }
 
     void EnableObjectInPool() 
     {
         foreach (GameObject enemy in pool) {
-            Debug.Log(enemy.activeInHierarchy);
+            
             if (!enemy.activeInHierarchy) {
                 enemy.SetActive(true);
                 return;

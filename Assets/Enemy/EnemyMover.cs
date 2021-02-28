@@ -7,24 +7,30 @@ public class EnemyMover : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] List<Waypoint> path = new List<Waypoint>();
+    
     [SerializeField] [Range(0f, 100f)] float maxSpeed = 1f;
     [SerializeField] [Range(0f, 100f)] float speed = 1f;
+
+    List<Node> path = new List<Node>();
     Enemy enemy;
+    GridManager gridManager;
+    Pathfinder pathfinder;
 
     public float Speed{get{return speed;} set{speed = value;}}
     public float MaxSpeed{get{return maxSpeed;} set{maxSpeed = value;}}
     void Awake() 
     {
         enemy = GetComponent<Enemy>();
+        gridManager = FindObjectOfType<GridManager>();
+        pathfinder = FindObjectOfType<Pathfinder>();
         
     }
     void OnEnable()
     {
         speed = maxSpeed;
-        FindPath();
         ReturnToStart();
-        StartCoroutine(FollowPath());
+        RecalculatePath(true);
+        
     }
 
     // Update is called once per frame
@@ -40,11 +46,11 @@ public class EnemyMover : MonoBehaviour
     }
     IEnumerator FollowPath()
     {
-        foreach (Waypoint waypoint in path)
+        for(int i = 1; i < path.Count; i++)
         {
 
             Vector3 startPosition = transform.position;
-            Vector3 endPosition = waypoint.transform.position;
+            Vector3 endPosition = gridManager.GetPositionFromCoordinates(path[i].coordinates);
             float travelPercent = 0f;
 
             transform.LookAt(endPosition);
@@ -61,20 +67,22 @@ public class EnemyMover : MonoBehaviour
 
     void ReturnToStart() 
     {
-        transform.position = path[0].transform.position;
+        transform.position = gridManager.GetPositionFromCoordinates(pathfinder.StartCoordinates);
     }
 
-    void FindPath() 
+    void RecalculatePath(bool resetPath) 
     {
-        path.Clear();
-        GameObject parent = GameObject.FindGameObjectWithTag("Path");
-
-        foreach (Transform child in parent.transform) {
-            Waypoint waypoint = child.GetComponent<Waypoint>();
-            if (waypoint != null) {
-                path.Add(waypoint);
-            }
-            
+        Vector2Int coordinates = new Vector2Int();
+        if(resetPath)
+        {
+            coordinates = pathfinder.StartCoordinates;
+        }else
+        {
+            coordinates = gridManager.GetCoordinatesFromPosition(transform.position);
         }
+        StopAllCoroutines();
+        path.Clear();
+        path = pathfinder.GetNewPath(coordinates);
+        StartCoroutine(FollowPath());
     }
 }

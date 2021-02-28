@@ -11,16 +11,19 @@ public class TargetLocator : MonoBehaviour
     [SerializeField] float attackSpeed = 60f;
     [SerializeField] float attackRange = 15f;
     ParticleSystem attackParticleSystem;
+    ParticleSystem.EmissionModule emission;
 
     // Update is called once per frame
     void Start() 
     {
-        attackParticleSystem = GetComponentInChildren<ParticleSystem>();
-        ParticleSystem.MainModule main =  attackParticleSystem.main;
-        main.startSpeed = attackSpeed;
+        attackParticleSystem = weapon.GetComponentInChildren<ParticleSystem>();
+        emission = attackParticleSystem.emission;
+        
+        
     }
     void Update()
     {
+        emission.rateOverTime = attackSpeed;
         FindClosestTarget();
         AimWeapon();
     }
@@ -29,7 +32,7 @@ public class TargetLocator : MonoBehaviour
     {
         if (target != null) 
         {
-            weapon.LookAt(target);
+            weapon.LookAt(target.Find("Target").transform);
             
             if (Vector3.Distance(target.position, gameObject.transform.position) > attackRange)
             {
