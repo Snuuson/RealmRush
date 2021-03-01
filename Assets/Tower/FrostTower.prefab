@@ -87,6 +87,16 @@ PrefabInstance:
       propertyPath: weapon
       value: 
       objectReference: {fileID: 1785839260061652965}
+    - target: {fileID: 3967167514915382889, guid: ea931e6d5562121478beecf5ae7c1a89,
+        type: 3}
+      propertyPath: attackRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3967167514915382889, guid: ea931e6d5562121478beecf5ae7c1a89,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4183971134810555869, guid: ea931e6d5562121478beecf5ae7c1a89,
         type: 3}
       propertyPath: m_RootOrder
@@ -141,6 +151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4770831869260624440, guid: ea931e6d5562121478beecf5ae7c1a89,
+        type: 3}
+      propertyPath: cost
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 9084382317677283210, guid: ea931e6d5562121478beecf5ae7c1a89,
         type: 3}

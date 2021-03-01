@@ -25,6 +25,7 @@ public class Tower : MonoBehaviour
     public int Damage{get{return damage;}}
     [SerializeField] DamageType damageType = DamageType.basic;
     public DamageType DamageType{get{return damageType;}}
+  
     
     void Start()
     {

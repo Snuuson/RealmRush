@@ -156,10 +156,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chicken
       objectReference: {fileID: 0}
+    - target: {fileID: 7644231263060202617, guid: 3152c465afb0bb44ba6605b6f0fe699d,
+        type: 3}
+      propertyPath: speed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7951436636855817600, guid: 3152c465afb0bb44ba6605b6f0fe699d,
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8437183312788801887, guid: 3152c465afb0bb44ba6605b6f0fe699d,
+        type: 3}
+      propertyPath: goldReward
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8939576414356582741, guid: 3152c465afb0bb44ba6605b6f0fe699d,
         type: 3}

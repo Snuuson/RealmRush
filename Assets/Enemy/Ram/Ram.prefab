@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4ae2c45f4e207941a5db0f24bc8f090, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitpoints: 3
+  maxHitpoints: 7
   difficultyRamp: 1
   currentHitpoints: 0
   hitParticleSystem: {fileID: 9182512630549800676}
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50f6274da00cd334d99c43a28c7999bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldReward: 15
+  goldReward: 25
   goldPenalty: 25
 --- !u!82 &5858837869267511950
 AudioSource:
