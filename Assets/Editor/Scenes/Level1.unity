@@ -737,8 +737,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c539ab02d375b84ca83bde9904859b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomSpeedY: 1000
-  zoomSpeedZ: -1500
+  zoomSpeed: 150
+  panSpeed: 100
+  rotationSpeed: 3.5
+  sidePanPercent: 0.02
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1396,7 +1398,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[0].objectPrefab
       value: 
-      objectReference: {fileID: 1487868952841265571, guid: 65c77489750848a4dae1516699d2f5d4,
+      objectReference: {fileID: 2614338438871493727, guid: f2bb850ebd7a80e46b22cdb4ab8b8e87,
         type: 3}
     - target: {fileID: 79169867475785482, guid: b8df142c4067d3341a39d69006ca2cfb,
         type: 3}
