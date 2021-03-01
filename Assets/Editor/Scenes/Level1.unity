@@ -590,7 +590,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 2.4611916e-38, w: -6.9e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -737,7 +737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c539ab02d375b84ca83bde9904859b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zoomSpeed: 150
+  zoomSpeed: 200
   panSpeed: 100
   rotationSpeed: 3.5
   sidePanPercent: 0.02
@@ -1398,7 +1398,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[0].objectPrefab
       value: 
-      objectReference: {fileID: 2614338438871493727, guid: f2bb850ebd7a80e46b22cdb4ab8b8e87,
+      objectReference: {fileID: 209783205083994393, guid: fc43de7232f8eba43925d3b1e2bf2bc4,
         type: 3}
     - target: {fileID: 79169867475785482, guid: b8df142c4067d3341a39d69006ca2cfb,
         type: 3}
