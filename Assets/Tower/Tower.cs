@@ -71,20 +71,31 @@ public class Tower : MonoBehaviour
     {
         foreach(Transform child in transform)
         {
-            child.gameObject.SetActive(false);
+            
             foreach(Transform grandChild in child)
             {
-                grandChild.gameObject.SetActive(false);
+                child.gameObject.SetActive(false);
+                foreach(Transform grandGrandChild in child)
+                {
+                    grandGrandChild.gameObject.SetActive(false);
+                }
+                
             }
         }
 
         foreach(Transform child in transform)
         {
-            child.gameObject.SetActive(true);
-            yield return new WaitForSeconds(buildDelay);
+            
             foreach(Transform grandChild in child)
             {
-                grandChild.gameObject.SetActive(true);
+                child.gameObject.SetActive(true);
+                foreach(Transform grandGrandChild in child)
+                {
+                    grandGrandChild.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(buildDelay);
+                }
+                
+                
             }
         }
     }
