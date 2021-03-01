@@ -165,7 +165,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &165314327
 GameObject:
@@ -719,7 +719,7 @@ PrefabInstance:
     - target: {fileID: 2896936272964860955, guid: 9d4149592a6af454ea2dc5cf1755c73c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2896936272964860955, guid: 9d4149592a6af454ea2dc5cf1755c73c,
         type: 3}
@@ -1188,7 +1188,7 @@ PrefabInstance:
         type: 3}
       propertyPath: waves.Array.data[0].objectPrefab
       value: 
-      objectReference: {fileID: 6534172836282624749, guid: 65c77489750848a4dae1516699d2f5d4,
+      objectReference: {fileID: 1487868952841265571, guid: 65c77489750848a4dae1516699d2f5d4,
         type: 3}
     - target: {fileID: 79169867475785482, guid: b8df142c4067d3341a39d69006ca2cfb,
         type: 3}
@@ -1216,7 +1216,7 @@ PrefabInstance:
     - target: {fileID: 79169867475785482, guid: b8df142c4067d3341a39d69006ca2cfb,
         type: 3}
       propertyPath: waves.Array.data[0].spawnInterval
-      value: 0.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 79169867475785482, guid: b8df142c4067d3341a39d69006ca2cfb,
         type: 3}

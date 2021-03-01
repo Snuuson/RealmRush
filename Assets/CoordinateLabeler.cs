@@ -36,9 +36,12 @@ public class CoordinateLabeler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Application.isPlaying)
+        {
+            DisplayCoordinates();
+            UpdateObjectName();     
+        }
         
-        DisplayCoordinates();
-        UpdateObjectName();
         SetLabelColor();
         ToggleLabels();
     }
