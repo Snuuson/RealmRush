@@ -16,7 +16,7 @@ public class CameraControll : MonoBehaviour
     Vector3 rotateStartMousePosition = new Vector3();
 
     Quaternion cameraStartRotation = new Quaternion();
-
+    bool canPan = true;
     
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,10 @@ public class CameraControll : MonoBehaviour
     void Update()
     {
         
-        
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            canPan = !canPan;
+        }
         Pan();
         Zoom();
         Rotate();
